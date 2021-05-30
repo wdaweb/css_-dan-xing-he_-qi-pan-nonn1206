@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: '標楷體';
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bolder;
+    }
+
+
+
+    .container {
+      width: 900px;
+      height: 900px;
+      background: white;
+      border: 1px solid black;
+      display: flex;
+      /* 預設 */
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: stretch;
+
+    }
+
+
+
+    .box {
+      width: 800px;
+      height: 360px;
+      background: white;
+      background-image:
+        linear-gradient(black 1px, transparent 0),
+        linear-gradient(90deg, black 1px, transparent 0);
+
+      background-size: 90px 90px, 100px 100px, 100px 100px;
+      border: 1px solid black;
+      display: flex;
+      /* 預設 */
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-self: center;
+
+      position: relative;
+
+    }
+
+    .box::before {
+      content: '';
+      width: 245px;
+      height: 100px;
+      box-sizing: border-box;
+      border-bottom: 1px solid black;
+      transform: rotate(42deg);
+      position: absolute;
+      top: 3%;
+      left: 40%;
+    }
+
+    .box::after {
+      content: '';
+      width: 250px;
+      height: 140px;
+      box-sizing: border-box;
+      border-bottom: 1px solid black;
+      transform: rotate(135deg);
+      position: absolute;
+      top: 20%;
+      left: 40%;
+    
+    }
+
+    .komabox1 {
+
+      width: 900px;
+      height: 100px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: absolute;
+      top: -5%;
+      left: -5%;
+z-index: 999;
+    }
+
+    .komabox2 {
+      width: 700px;
+      height: 100px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 35%;
+      left: 7%;
+
+    }
+
+    .komabox3 {
+      width: 900px;
+      height: 100px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 60%;
+      left: -5%;
+    }
+
+    .koma {
+      border: 1px solid black;
+      background: white;
+      width: 70px;
+      height: 70px;
+      border-radius: 70%;
+      font-size: 40px;
+      text-align: center;
+      line-height: 70px;
+      margin-right: 2%;
+
+    }
+
+    .box1 {
+      width: 800px;
+      height: 80px;
+      background: white;
+      border: 2px solid black;
+      border-top: none;
+      border-bottom: none;
+      display: flex;
+      /* 預設 */
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      align-self: center;
+
+    }
+
+    span {
+      font-size: 50px;
+
+    }
+
+    .box2 {
+      width: 800px;
+      height: 360px;
+      background: white;
+      background-image:
+        linear-gradient(black 1px, transparent 0),
+        linear-gradient(90deg, black 1px, transparent 0);
+      background-size: 90px 90px, 100px 100px, 100px 100px;
+      border: 1px solid black;
+      display: flex;
+      /* 預設 */
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      align-self: center;
+      position: relative;
+    }
+
+    .box2::before {
+      content: '';
+      width: 245px;
+      height: 100px;
+      box-sizing: border-box;
+      border-bottom: 1px solid black;
+      transform: rotate(42deg);
+      position: absolute;
+      top: 49%;
+      left: 38%;
+    }
+
+    .box2::after {
+      content: '';
+      width: 250px;
+      height: 150px;
+      box-sizing: border-box;
+      border-bottom: 1px solid black;
+      transform: rotate(135deg);
+      position: absolute;
+      top: 67%;
+      left: 42%;
+    
+    }
+
+    p {
+      writing-mode: vertical-lr;
+      font-size: 40px;
+      margin: 1%;
+    }
+
+
+    .mako {
+      border: 1px solid black;
+      background: white;
+      color: red;
+      width: 70px;
+      height: 70px;
+      border-radius: 70%;
+      font-size: 40px;
+      text-align: center;
+      line-height: 70px;
+      margin-right: 2%;
+    }
+
+    .makobox1 {
+      width: 900px;
+      height: 100px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 10%;
+      left: -5%;
+    }
+
+    .makobox2 {
+      width: 700px;
+      height: 100px;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 35%;
+      left: 7%;
+
+    }
+
+
+    .makobox3 {
+      width: 900px;
+      height: 100px;
+      display: flex;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: absolute;
+      bottom: -15%;
+      left: -5%;
+      z-index: 999;
+    }
+  </style>
+</head>
+
+<body>
+  <p>棋盤裡，車無輪，馬無韁，叫聲將軍提防提防</p>
+  <div class="container">
+    <!-- 上方 -->
+    <div class="box">
+      <div class="komabox1">
+
+        <div class="koma">車</div>
+        <div class="koma">馬</div>
+        <div class="koma">象</div>
+        <div class="koma">士</div>
+        <div class="koma">將</div>
+        <div class="koma">士</div>
+        <div class="koma">象</div>
+        <div class="koma">馬</div>
+        <div class="koma">車</div>
+      </div>
+      <div class="komabox2">
+        <div class="koma sb">包</div>
+        <div class="koma sb">包</div>
+      </div>
+      <!-- 下方 -->
+      <div class="komabox3">
+        <div class="koma ">卒</div>
+        <div class="koma ">卒</div>
+        <div class="koma ">卒</div>
+        <div class="koma ">卒</div>
+        <div class="koma ">卒</div>
+      </div>
+      <!-- 中間 -->
+    </div>
+    <div class="box1">
+      <span>楚河</span>
+      <span>漢界</span>
+    </div>
+    <div class="box2">
+      <div class="makobox1">
+        <div class="mako ">兵</div>
+        <div class="mako ">兵</div>
+        <div class="mako ">兵</div>
+        <div class="mako ">兵</div>
+        <div class="mako ">兵</div>
+      </div>
+      <div class="makobox2">
+        <div class="mako sb">砲</div>
+        <div class="mako sb">砲</div>
+      </div>
+      <div class="makobox3">
+        <div class="mako">俥</div>
+        <div class="mako">傌</div>
+        <div class="mako">相</div>
+        <div class="mako">仕</div>
+        <div class="mako">帥</div>
+        <div class="mako">仕</div>
+        <div class="mako">相</div>
+        <div class="mako">傌</div>
+        <div class="mako">俥</div>
+      </div>
+    </div>
+  </div>
+  <p>圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑</p>
+</body>
+
+</html>
